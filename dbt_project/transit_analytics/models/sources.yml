@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    database: main
+    tables:
+      - name: raw_mta_ridership
+        description: Raw MTA ridership data from NY.gov API

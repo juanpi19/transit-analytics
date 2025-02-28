@@ -1,0 +1,6 @@
+transit_analytics: 
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /Users/juanherrera/transit-analytics/data/transit_data.duckdb
