@@ -10,16 +10,30 @@ db_path = os.path.join(project_root, 'data', 'transit_data.duckdb')
 conn = duckdb.connect(db_path)
 
 # Simple query
+# result = conn.execute("""
+#     SELECT *
+#     FROM raw_mta_ridership
+
+# """).fetchall()
+
+# print(result)
+
+################################################################################
+
+# Query your new model
+# result = conn.execute("""
+#     SELECT *
+#     FROM stg_mta_ridership
+#     LIMIT 5;  -- just to see a few rows
+# """).fetchall()
+
+# print(result)
+
+
+################################################################################
+# Show all tables
 result = conn.execute("""
-    SELECT 
-        transit_mode,
-        borough,
-        SUM(ridership) as total_riders
-    FROM raw_mta_ridership
-    WHERE transit_timestamp >= '2024-01-01'
-    GROUP BY transit_mode, borough
-    ORDER BY total_riders DESC
-    LIMIT 10
+    SHOW TABLES;
 """).fetchall()
 
 print(result)

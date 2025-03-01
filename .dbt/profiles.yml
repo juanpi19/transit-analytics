@@ -3,4 +3,5 @@ transit_analytics:
   outputs:
     dev:
       type: duckdb
-      path: /Users/juanherrera/transit-analytics/data/transit_data.duckdb
+      path: ../data/transit_data.duckdb
+      schema: main

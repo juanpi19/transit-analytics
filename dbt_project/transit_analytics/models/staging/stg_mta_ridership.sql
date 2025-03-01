@@ -2,7 +2,7 @@
 
 SELECT
   transit_timestamp,
-  DATE(transit_timestamp) AS ride_date,
+  transit_timestamp::DATE AS ride_date,
   transit_mode,
   station_complex_id,
   station_complex,
